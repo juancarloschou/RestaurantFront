@@ -1,6 +1,6 @@
 {
-  "name": "restaurant-management",
-  "version": "0.1.0",
+  "name": "restaurant",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@types/jest": "^29.5.12",
