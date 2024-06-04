@@ -1,0 +1,77 @@
+/* Navbar.css */
+
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  position: relative;
+  height: 20px;
+}
+
+.navbar-toggle {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+}
+
+.icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: white;
+  margin: 4px 0;
+  transition: transform 0.3s ease;
+}
+
+.icon-bar.open:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.icon-bar.open:nth-child(2) {
+  opacity: 0;
+}
+
+.icon-bar.open:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+.menu-overlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #333;
+  padding: 1rem;
+  display: none;
+  z-index: 100;
+}
+
+.menu-overlay.open {
+  display: block;
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin-bottom: 1rem;
+}
+
+.menu hr {
+  border: none;
+  border-top: 1px solid white;
+  margin: 0.5rem 0;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: yellow;
+}
