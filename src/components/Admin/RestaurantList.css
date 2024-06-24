@@ -1,0 +1,16 @@
+/* src/components/Admin/RestaurantList.css */
+
+.restaurant-list {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .restaurant-list th, .restaurant-list td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+  }
+  
+  .restaurant-list th {
+    background-color: #f4f4f4;
+  }
+  

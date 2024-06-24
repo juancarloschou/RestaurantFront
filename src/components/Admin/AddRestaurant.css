@@ -1,0 +1,19 @@
+/* src/components/Admin/AddRestaurant.css */
+
+.add-restaurant-form {
+    margin-bottom: 1rem;
+  }
+  
+  .add-restaurant-form div {
+    margin-bottom: 0.5rem;
+  }
+  
+  .add-restaurant-form label {
+    margin-right: 0.5rem;
+  }
+  
+  .add-restaurant-form input {
+    padding: 0.5rem;
+    margin-right: 1rem;
+  }
+  
