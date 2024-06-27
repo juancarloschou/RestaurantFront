@@ -15,3 +15,8 @@ export const put = async (url: string, data: any) => {
   const response = await axios.put(url, data);
   return response.data;
 };
+
+export const del = async (url: string, data: any) => {
+  const response = await axios.delete(url, { data });
+  return response.data;
+};

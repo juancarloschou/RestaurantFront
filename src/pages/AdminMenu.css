@@ -1,0 +1,48 @@
+/* src/pages/AdminMenu.css */
+
+.admin-menu {
+    padding: 1rem;
+  }
+  
+  .admin-menu h1, .admin-menu h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .admin-menu select {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .menu-item-form {
+    margin-bottom: 2rem;
+  }
+  
+  .menu-item-form input {
+    margin-right: 0.5rem;
+    padding: 0.5rem;
+  }
+  
+  .menu-item-form button {
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table, th, td {
+    border: 1px solid black;
+  }
+  
+  th, td {
+    padding: 0.5rem;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
