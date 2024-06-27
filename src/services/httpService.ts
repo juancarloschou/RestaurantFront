@@ -1,23 +1,17 @@
 // src/services/httpService.ts
+import axios from 'axios';
+
 export const get = async (url: string) => {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  };
-  
-  export const post = async (url: string, data: any) => {
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  };
-  
+  const response = await axios.get(url);
+  return response.data;
+};
+
+export const post = async (url: string, data: any) => {
+  const response = await axios.post(url, data);
+  return response.data;
+};
+
+export const put = async (url: string, data: any) => {
+  const response = await axios.put(url, data);
+  return response.data;
+};

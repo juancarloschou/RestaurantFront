@@ -1,8 +1,9 @@
 // src/pages/AdminRestaurants.tsx
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AddRestaurant from '../components/Admin/AddRestaurant';
 import RestaurantList from '../components/Admin/RestaurantList';
-import { getAllRestaurants, addRestaurant as addRestaurantService } from '../services/restaurantService';
+import EditRestaurant from '../components/Admin/EditRestaurant';
+import { getAllRestaurants, addRestaurant as addRestaurantService, updateRestaurant as updateRestaurantService } from '../services/restaurantService';
 
 interface Restaurant {
   id: number;
@@ -13,6 +14,7 @@ interface Restaurant {
 const AdminRestaurants: React.FC = () => {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const [editingRestaurant, setEditingRestaurant] = useState<Restaurant | null>(null);
 
   useEffect(() => {
     fetchRestaurants();
@@ -39,6 +41,16 @@ const AdminRestaurants: React.FC = () => {
     }
   };
 
+  const updateRestaurant = async (id: number, name: string, location: string) => {
+    try {
+      await updateRestaurantService(id, name, location);
+      await fetchRestaurants();
+      setEditingRestaurant(null);
+    } catch (error) {
+      console.error('Error updating restaurant:', error);
+    }
+  };
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -46,11 +58,20 @@ const AdminRestaurants: React.FC = () => {
   return (
     <div>
       <h1>Manage Restaurants</h1>
-      <AddRestaurant onAddRestaurant={addRestaurant} />
-      <RestaurantList restaurants={restaurants} />
+      {editingRestaurant ? (
+        <EditRestaurant
+          restaurant={editingRestaurant}
+          onSave={updateRestaurant}
+          onCancel={() => setEditingRestaurant(null)}
+        />
+      ) : (
+        <>
+          <AddRestaurant onAddRestaurant={addRestaurant} />
+          <RestaurantList restaurants={restaurants} onEdit={setEditingRestaurant} />
+        </>
+      )}
     </div>
   );
 };
 
 export default AdminRestaurants;
-

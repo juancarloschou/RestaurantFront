@@ -1,0 +1,24 @@
+/* src/components/Admin/EditRestaurant.css */
+
+.edit-restaurant-form {
+  margin-bottom: 1rem;
+}
+
+.edit-restaurant-form div {
+  margin-bottom: 0.5rem;
+}
+
+.edit-restaurant-form label {
+  margin-right: 0.5rem;
+}
+
+.edit-restaurant-form input {
+  padding: 0.5rem;
+  margin-right: 1rem;
+}
+
+.edit-restaurant-form button {
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}

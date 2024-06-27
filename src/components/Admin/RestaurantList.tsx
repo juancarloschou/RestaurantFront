@@ -10,29 +10,32 @@ interface Restaurant {
 
 interface RestaurantListProps {
   restaurants: Restaurant[];
+  onEdit: (restaurant: Restaurant) => void;
 }
 
-const RestaurantList: React.FC<RestaurantListProps> = ({ restaurants }) => {
-  return (
-    <table className="restaurant-list">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Location</th>
+const RestaurantList: React.FC<RestaurantListProps> = ({ restaurants, onEdit }) => (
+  <table className="restaurant-list">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      {restaurants.map((restaurant) => (
+        <tr key={restaurant.id}>
+          <td>{restaurant.id}</td>
+          <td>{restaurant.name}</td>
+          <td>{restaurant.location}</td>
+          <td>
+            <button onClick={() => onEdit(restaurant)}>✏️</button>
+          </td>
         </tr>
-      </thead>
-      <tbody>
-        {restaurants.map((restaurant) => (
-          <tr key={restaurant.id}>
-            <td>{restaurant.id}</td>
-            <td>{restaurant.name}</td>
-            <td>{restaurant.location}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
-};
+      ))}
+    </tbody>
+  </table>
+);
+
 
 export default RestaurantList;
